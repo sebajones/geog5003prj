@@ -1,3 +1,4 @@
+# import libraries
 import random
 import operator
 import matplotlib
@@ -6,6 +7,18 @@ import matplotlib.animation
 import agentframework
 import csv
 import tkinter
+import requests
+import bs4
+
+# scrape y and x data
+
+# get url and parse data
+r = requests.get('http://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part9/data.html')
+content = r.text
+soup = bs4.BeautifulSoup(content, 'html.parser')
+# find x and y tags
+td_ys = soup.find_all(attrs={"class" : "y"})
+td_xs = soup.find_all(attrs={"class" : "x"})
 
 environment = []
 
@@ -28,7 +41,9 @@ ax = fig.add_axes([0, 0, 1, 1])
 
 # create agents
 for i in range(num_of_agents):
-    agents.append(agentframework.Agent(environment, agents))
+    y = int(td_ys[i].text)
+    x = int(td_xs[i].text)
+    agents.append(agentframework.Agent(environment, agents, y, x))
 
 carry_on = True
 
