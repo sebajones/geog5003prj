@@ -72,7 +72,7 @@ def update(frame_number):
 def gen_function(b = [0]):
     a = 0
     global carry_on #Not actually needed as we're not assigning, but clearer
-    while (a < 20) & (carry_on) :
+    while (a < 10) & (carry_on) :
         yield a			# Returns control and waits next call.
         a = a + 1
 
