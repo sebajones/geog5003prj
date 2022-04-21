@@ -1,7 +1,7 @@
 # geog5003prj
 Agent Based Model
 
-A agent based model that:
+An agent based model that:
 - builds agents in a space;
 - gets them to interact with eachother;
 - reads in environmental data;
