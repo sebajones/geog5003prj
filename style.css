@@ -86,7 +86,6 @@ button{
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    transition-delay: 0.5s;
 }
 button img{
     width: 100px;
