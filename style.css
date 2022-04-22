@@ -71,10 +71,20 @@ nav ul li a:hover{
     margin-bottom: 5px;
 }
 button{
-    width: 50px;
+    width: 200px;
     border: 0;
     padding: 12px 10px;
     outline: none;
-    color: white;
-    background: linear-gradient(to right, #fff #c0c0c0)
+    color: black;
+    background: linear-gradient(to right, #fff #c0c0c0);
+    border-radius: 6px;
+    cursor: pointer;
+}
+button img{
+    width: 150px;
+    display: none;
+    align-items: right;
+}
+button:hover{
+    display: flex;
 }
