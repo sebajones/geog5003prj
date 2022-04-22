@@ -20,9 +20,10 @@ soup = bs4.BeautifulSoup(content, 'html.parser')
 td_ys = soup.find_all(attrs={"class" : "y"})
 td_xs = soup.find_all(attrs={"class" : "x"})
 
+# create empty list for the environment data
 environment = []
 
-# read in csv
+# read in environment data and append to the environment list
 with open("in.txt", newline='') as f:
     reader = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
     for row in reader:
@@ -31,20 +32,25 @@ with open("in.txt", newline='') as f:
             rowlist.append(value)
         environment.append(rowlist)
 
+# set model variable values
 num_of_agents = 100
 num_of_iterations = 10
 neighbourhood = 20
+
+# create empty list for agents
 agents = []
 
+# set pyplot figure settings and apply set variable names
 fig = matplotlib.pyplot.figure(figsize=(7, 7))
 ax = fig.add_axes([0, 0, 1, 1])
 
-# create agents
+# use loop to create agents using scraped data values and append to agents list
 for i in range(num_of_agents):
     y = int(td_ys[i].text)
     x = int(td_xs[i].text)
     agents.append(agentframework.Agent(environment, agents, y, x))
 
+# set animation 'carry_on' control to True
 carry_on = True
 
 def update(frame_number):

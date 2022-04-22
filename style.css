@@ -88,6 +88,7 @@ button{
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+    font-size: 20px;
 }
 button img{
     width: 100px;
@@ -95,5 +96,5 @@ button img{
     align-items: center;
 }
 button:hover{
-    font-size: larger;
+    background: #003e8f;
 }
