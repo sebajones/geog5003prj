@@ -50,9 +50,11 @@ for i in range(num_of_agents):
     x = int(td_xs[i].text)
     agents.append(agentframework.Agent(environment, agents, y, x))
 
-# set animation 'carry_on' control to True
+# set animation control 'carry_on' to True
 carry_on = True
 
+# define update function
+# updates
 def update(frame_number):
     fig.clear()
     global carry_on
@@ -64,22 +66,27 @@ def update(frame_number):
             agents[i].eat()
             agents[i].share_with_neighbours(neighbourhood)
 
+    # animation stopping condition
     #while random.random < 0.1:
     #    carry_on = False
     #    print("stopping condition")
 
+    # pre-environment pyplot axis limits
     #matplotlib.pyplot.xlim(0, 99)
     #matplotlib.pyplot.ylim(0, 99)
-    matplotlib.pyplot.imshow(environment, cmap='terrain')
-    for i in range(num_of_agents):
-        matplotlib.pyplot.scatter(agents[i].x,agents[i].y,
-        color='whitesmoke', edgecolors='slategray')
 
+    # show environment surface
+    matplotlib.pyplot.imshow(environment, cmap='terrain')
+    for i in range(num_of_agents):      # loop through agents xy values
+        matplotlib.pyplot.scatter(agents[i].x,agents[i].y,      #plot xy
+        color='whitesmoke', edgecolors='slategray')     # set colours
+
+# define generator function stops supplying when the condition is met
 def gen_function(b = [0]):
     a = 0
-    global carry_on #Not actually needed as we're not assigning, but clearer
+    global carry_on
     while (a < 10) & (carry_on) :
-        yield a			# Returns control and waits next call.
+        yield a			# returns control and waits for next call
         a = a + 1
 
 def run():
