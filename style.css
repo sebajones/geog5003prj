@@ -96,4 +96,6 @@ button img{
 button:hover{
     background: #A9A9A9;
     color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: space-between;
 }
