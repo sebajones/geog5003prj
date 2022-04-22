@@ -83,7 +83,6 @@ button{
 button img{
     width: 150px;
     display: none;
-    align-items: right;
 }
 button:hover{
     display: flex;
