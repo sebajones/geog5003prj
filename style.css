@@ -91,7 +91,7 @@ button{
 button img{
     width: 100px;
     display: block;
-
+    align-items: center;
 }
 button:hover{
     background: #A9A9A9;
