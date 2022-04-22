@@ -70,6 +70,12 @@ nav ul li a:hover{
     font-weight: 100;
     margin-bottom: 5px;
 }
+.col-2{
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+}
 button{
     width: 200px;
     border: 0;
