@@ -72,14 +72,14 @@ nav ul li a:hover{
 }
 .col-2{
     position: relative;
-    flex-basis: 60%;
+    flex-basis: 100%;
     display: flex;
     align-items: center;
 }
 button{
     width: 200px;
     border: 0;
-    padding: 12px 10px;
+    padding: 10px 10px;
     outline: none;
     color: black;
     background: linear-gradient(to right, #fff #c0c0c0);
